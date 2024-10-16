@@ -41,13 +41,13 @@ class Torques:
 
 class Config:
     x_arm = 0.9
-    x_npairs = 1
+    x_npairs = 2
     thrust = 1
     min_impulse = 0.043
     y_arm = 0.9
     y_npairs = 1
     z_arm = 0.9
-    z_npairs = 1
+    z_npairs = 2
 
     x_m = x_arm*x_npairs*thrust
     y_m = y_arm*y_npairs*thrust
@@ -58,7 +58,7 @@ class Config:
     RW_torque = 1
 
 class Manoevre_torqs:
-    time = 120
+    time = 180
     angle = m.radians(90)
     torque_x = 4*MoI.x*angle/(time**2)
     torque_y = 4*MoI.y*angle/(time**2)
