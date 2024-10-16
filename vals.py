@@ -26,14 +26,14 @@ margin_factor = 0.4
 
 
 class MoI:
-    z = 595.65
-    y = 417.61
-    x = 280.71
+    x = 854.92
+    y = 830.18
+    z = 716.473
 
 
 class Torques:
     spanel = 1.169e-6
-    grav_grad = ((mercury_grav_parameter/(final_sma**3))*3/2) * (MoI.z - MoI.x)
+    grav_grad = ((mercury_grav_parameter/(final_sma**3))*3/2) * (max(MoI.x, MoI.y, MoI.z) - min(MoI.x, MoI.y, MoI.z))
     magnetic = 2e-8
     dist = spanel+grav_grad+magnetic
     print("torque = ", dist)

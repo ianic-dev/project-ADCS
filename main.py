@@ -40,7 +40,7 @@ if __name__ == "__main__":
 
     dist_req = (vals.Torques.dist * (1+vals.margin_factor))
 
-    '''
+    #'''
     fig, ax = plt.subplots()
     axes = ("x", "y", "z")
     x = np.arange(len(axes))
@@ -53,6 +53,7 @@ if __name__ == "__main__":
 
     bar_n = 0
     for requirement, value in data.items():
+        print("isgood")
         offset = width*bar_n
         rects = ax.bar(x+offset,value,width,label=requirement)
         ax.bar_label(rects, padding=2)
